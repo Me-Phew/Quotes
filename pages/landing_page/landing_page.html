@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../base.css">
+    <link rel="stylesheet" href="landing_page.css">
+    <title>Quotes</title>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <nav>
+        <a href="landing_page.html" class="active">Random Quote</a>
+        <a href="../search/search.html">Search Quotes</a>
+        <a href="">Quotes Explorer</a>
+      </nav>
+      <div class="quote-wrapper">
+        <div class="quote-hover-container">
+          <div class="big-quote">
+            <div class="loader">
+              <div class="lds-ripple"><div></div><div></div></div>
+            </div>
+            <div class="error-box"></div>
+            <div class="front">
+              <!-- <h1 class='content'>The cost of being wrong is less than the cost of doing nothing.</h1> -->
+              <h1 class='content'></h1>
+              <h4 class='author'></h4>
+              <div class="bottom">
+                <button class="share">
+                  <p>Share this quote</p>
+                  <img src="../../images/share.png" alt="">
+                </button>
+                <img src="../../images/tap.png" alt="" class="click-icon">
+                <div class="popularity-wrapper">
+                  <p class='popularity-count'></p>
+                  <img src="../../images/trending.png" alt="" class="popularity-icon">
+                </div>
+              </div>
+            </div>
+            <div class="back">
+              <h1 class='back-title'>About the author</h1>
+              <div class="back-content">
+                <h2 class='author'>Seth Godin</h2>
+                <div class="left">
+                  <h6>Born</h6>
+                  <p class='detail'>July 10, 1960 Mount Vernon, New York United States</p>
+                </div>
+                <p class="description">Seth W.Godin is an American auothor and former dot com business executive. Godin is the author of over 18 books. Godin was inducted into the American Marketing Association's Marketing Hall of Fame in 2018.</p>
+                <img class='author-img' src="https://tecnomarketingnews.com/wp-content/uploads/2016/03/seth-godin.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="next-quote-wrapper">
+        <button class="next-quote" disabled><span class="left-quote quote-symbol">“</span><span class="main">Next </span><span class="accent">Quote</span><span class="right-quote quote-symbol">”</span></button>
+      </div>
+    </div>
+    <div class="share-modal closed">
+      <div class="share-wrapper">
+        <img src="../../images/close.png" alt="" class="close">
+        <div class="title">Share</div>
+        <div class="share">
+          <input class='share-url' readonly>
+          <button class='share-btn'>
+            <img src="https://fonts.gstatic.com/s/i/googlematerialicons/content_copy/v16/gm_grey200-24dp/1x/gm_content_copy_gm_grey200_24dp.png" alt="">
+            COPY</button>
+        </div>
+      </div>
+    </div>
+    <div class="error-modal closed">
+      <div class="error-wrapper">
+        <img src="../../images/warning.png" alt="" class="warning-sign">
+        <h1 class="error">Failed to load quote</h1>
+        <h2 class="error-details">Error request timed out</h2>
+        <button class="try-again">Try again</button>
+      </div>
+    </div>
+    <button class="share-site">
+      <img src="../../images/share.png" alt="">
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="landing_page.js"></script>
+  </body>
+</html>
