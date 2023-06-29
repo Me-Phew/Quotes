@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
 
 .lds-ripple {
   display: inline-block;
@@ -50,8 +50,13 @@ body {
 }
 
 .big-quote {
-  background-color: #FF3CAC;
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,25 +75,25 @@ body {
 }
 
 @keyframes backgroundAnimation {
-	0% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
 
   25% {
     background-position: 50% 25%;
   }
 
   50% {
-		background-position: 100% 50%;
-	}
+    background-position: 100% 50%;
+  }
 
   75% {
     background-position: 50% 25%;
   }
 
-	100% {
-		background-position: 0% 50%;
-	}
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .loader {
@@ -99,6 +104,17 @@ body {
   display: block;
 }
 
+/* todo: here scroll fix */
+.big-quote .front .content {
+  position: relative;
+  top: 50px;
+  overflow: auto;
+}
+
+.big-quote .front .content::-webkit-scrollbar {
+  background-color: #0093e9;
+}
+/*  */
 .big-quote .error-box {
   display: none;
   opacity: 0;
@@ -124,7 +140,7 @@ body {
 
 .big-quote.error .error-box {
   display: flex;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .big-quote.error *:not(.error-box) {
@@ -166,7 +182,8 @@ body {
   padding: 100px 50px;
 }
 
-.big-quote .front, .big-quote .back {
+.big-quote .front,
+.big-quote .back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -174,32 +191,43 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-.big-quote .front *, .big-quote .back *{
+.big-quote .front *,
+.big-quote .back * {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-.big-quote .front.loading, .big-quote .back.loading{
+.big-quote .front.loading,
+.big-quote .back.loading {
   display: none;
 }
 
-.big-quote .front.show, .big-quote .back.show {
+.big-quote .front.show,
+.big-quote .back.show {
   display: block;
 }
 
-.quote-hover-container:hover .big-quote:not(.loading):not(.error):not(.flipped){
-  transform: perspective(1200px) rotateX(35deg) rotateY(20deg) rotateZ(-25deg) translateX(35px) translateY(0px) translateZ(200px);
+.quote-hover-container:hover
+  .big-quote:not(.loading):not(.error):not(.flipped) {
+  transform: perspective(1200px) rotateX(35deg) rotateY(20deg) rotateZ(-25deg)
+    translateX(35px) translateY(0px) translateZ(200px);
 }
 
-.quote-hover-container:hover .big-quote:not(.loading):not(.error) > *:not(.back) {
+.quote-hover-container:hover
+  .big-quote:not(.loading):not(.error)
+  > *:not(.back) {
   transform: translateZ(20px);
 }
 
-.quote-hover-container:hover .big-quote.clickable:not(.flipped):not(.clicked) .bottom .click-icon {
+.quote-hover-container:hover
+  .big-quote.clickable:not(.flipped):not(.clicked)
+  .bottom
+  .click-icon {
   animation: toggle 2s ease infinite;
 }
 
-.big-quote.flipped, .quote-hover-container:hover .big-quote.flipped {
+.big-quote.flipped,
+.quote-hover-container:hover .big-quote.flipped {
   transform: rotateY(180deg);
   /* transform: perspective(1200px) rotateX(35deg) rotateY(-160deg)  rotateZ(25deg) translateX(-35px) translateY(0px) translateZ(-200px); */
 }
@@ -215,7 +243,7 @@ body {
 .big-quote h1.text-short {
   display: flex;
   align-items: center;
-  height: 60%
+  height: 60%;
 }
 
 .big-quote h1.font-size-default {
@@ -307,13 +335,12 @@ body {
   }
 }
 
-
 .big-quote .bottom .popularity-wrapper {
   display: flex;
   align-items: center;
 }
 
-.big-quote .bottom .popularity-wrapper .popularity-count{
+.big-quote .bottom .popularity-wrapper .popularity-count {
   font-size: 3rem;
   font-weight: 600;
 }
@@ -335,11 +362,7 @@ body {
 }
 
 .big-quote .share * {
-  transition: color 1600ms ease, filter 1600ms ease;
-}
-
-.big-quote .share img {
-  width: 40px;
+  transition: color 1600ms ease;
 }
 
 .big-quote .share p {
@@ -348,7 +371,7 @@ body {
 }
 
 .big-quote .share:hover {
-  background-color: rgba(58, 59, 60, .5);
+  background-color: rgba(58, 59, 60, 0.5);
   border-color: cornflowerblue;
 }
 
@@ -356,8 +379,14 @@ body {
   color: white;
 }
 
+.big-quote .share img {
+  width: 40px;
+  transition: filter 1600ms ease;
+}
+
 .big-quote .share:hover img {
-  filter: invert(97%) sepia(2%) saturate(12%) hue-rotate(350deg) brightness(99%) contrast(108%);
+  filter: invert(97%) sepia(2%) saturate(12%) hue-rotate(350deg) brightness(99%)
+    contrast(108%);
 }
 
 .next-quote-wrapper {
@@ -371,10 +400,10 @@ button.next-quote {
   cursor: pointer;
   font-size: 2rem;
   font-weight: 900;
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   height: 60px;
-	width: 380px;
+  width: 380px;
   border-radius: 5px;
   background-size: 200% 200%;
   position: relative;
@@ -385,14 +414,15 @@ button.next-quote {
 
 button.next-quote:disabled {
   background-color: black;
-  opacity: .8;
+  opacity: 0.8;
   cursor: default;
   background-image: linear-gradient(160deg, #333 0%, #888 100%);
 }
 
-button.next-quote:disabled .main, button.next-quote:disabled .accent {
+button.next-quote:disabled .main,
+button.next-quote:disabled .accent {
   color: black;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 button.next-quote .quote-symbol {
@@ -404,7 +434,7 @@ button.next-quote .quote-symbol {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
 }
 
 button.next-quote.clicked .quote-symbol {
@@ -434,7 +464,7 @@ button.next-quote .accent {
 }
 
 button.next-quote:hover:not(.clicked):not(:disabled) .main {
-  transform:  translateY(50px) translateX(45px);
+  transform: translateY(50px) translateX(45px);
 }
 
 button.next-quote.clicked .main {
@@ -446,7 +476,6 @@ button.next-quote.clicked .accent {
   transform: translateX(-21px) translateY(-50px);
   color: white;
 }
-
 
 button.next-quote:hover:not(.clicked):not(:disabled) .accent {
   transform: translateX(-21px);
@@ -504,7 +533,7 @@ button.next-quote.clicked {
 
 .error-wrapper {
   position: relative;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -522,14 +551,14 @@ button.next-quote.clicked {
 .error-wrapper .error {
   color: rgb(84, 85, 92);
   font-size: 3rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
 }
 
 .error-wrapper .error-details {
   color: rgb(146, 144, 142);
   font-size: 2rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -542,7 +571,7 @@ button.next-quote.clicked {
   font-size: 1.6rem;
   transition: background-color 500ms ease;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .error-modal button:hover {
