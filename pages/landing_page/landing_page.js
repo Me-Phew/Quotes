@@ -1,5 +1,5 @@
 const axiosInstance = axios.create({
-  baseURL: "https://api.quotes.dripsiaga.pl/",
+  baseURL: "https://api.quotes.mateuszbasiaga.pl/",
   timeout: 5000,
 });
 
